@@ -1,7 +1,7 @@
 import {
   createElement,
   createHeader,
-  INFO_LIST,
+  //   INFO_LIST,
   //   createInfo,
 } from '../../script/layout'
 
@@ -20,12 +20,12 @@ page.append(title)
 const CHANGE_LIST = [
   {
     info: 'База знань',
-    viewed: false,
+    viewed: true,
   },
 
   {
     info: 'Інформація',
-    viewed: true,
+    viewed: false,
   },
 ]
 
@@ -46,7 +46,11 @@ const createChange = () => {
       ch.info,
     )
 
-    changeTwo.append(change, text)
+    const under = createElement('div', 'change__under')
+
+    change.append(text, under)
+
+    changeTwo.append(change)
   })
   return changeTwo
 }
@@ -54,49 +58,91 @@ const createChange = () => {
 const change = createChange()
 page.append(change)
 
-// const INFO_LIST = [
-//   {
-//     width: 340,
-//     height: 160,
-//     src: '/img/telegram.png',
-//     title: 'Що таке база знань?',
-//     text: `База знаний — база данных, содержащая правила вывода и информацию о человеческом опыте и знаниях в некоторой предметной области. В самообучающихся системах база знаний также содержит информацию, являющуюся результатом решения предыдущих задач.`,
-//     button: `Перейти до ком'юніті у Телеграм`,
-//   },
-// ]
+const INFO_LIST = {
+  width: 340,
+  height: 160,
+  src: '/img/telegram.png',
+  title: 'Що таке база знань?',
+  text: `База знаний — база данных, содержащая правила вывода и информацию о человеческом опыте и знаниях в некоторой предметной области. В самообучающихся системах база знаний также содержит информацию, являющуюся результатом решения предыдущих задач.`,
+  button: `Перейти до ком'юніті у Телеграм`,
+}
 
 const createInfo = () => {
-  const boxInfo = createElement('div', 'info')
+  //   const boxInfo = createElement('div', 'info')
 
-  INFO_LIST.forEach((infoData) => {
-    const image = createElement(
-      'img',
-      'info__img',
-      infoData.src,
-    )
+  //   INFO_LIST.forEach((infoData) => {
+  //     const image = createElement(
+  //       'img',
+  //       'info__img',
+  //       infoData.src,
+  //     )
 
-    const info = createElement(
-      'h2',
-      'info__header',
-      infoData.title,
-    )
+  //     const info = createElement(
+  //       'h2',
+  //       'info__header',
+  //       infoData.title,
+  //     )
 
-    const text = createElement(
-      'p',
-      'info__text',
-      infoData.text,
-    )
+  //     const text = createElement(
+  //       'p',
+  //       'info__text',
+  //       infoData.text,
+  //     )
 
-    const button = createElement(
-      'button',
-      'info__button',
-      infoData.button,
-    )
+  //     const button = createElement(
+  //       'button',
+  //       'info__button',
+  //       infoData.button,
+  //     )
 
-    boxInfo.append(image, info, text, button)
-  })
+  //     boxInfo.append(image, info, text, button)
+  //   })
 
-  return boxInfo
+  //   return boxInfo
+
+  ///
+
+  const infoBox = createElement('div', 'info')
+
+  const img = createElement('img', 'info__img')
+
+  img.src = INFO_LIST.src
+
+  infoBox.appendChild(img)
+
+  const title = createElement(
+    'div',
+    'info__title',
+    INFO_LIST.title,
+  )
+
+  infoBox.appendChild(title)
+
+  const textContainer = createElement(
+    'div',
+    'info__text',
+    INFO_LIST.text,
+  )
+
+  //   const paragraph = createElement(
+  //     'p',
+  //     'info__paragraph',
+  //     INFO_LIST.text,
+  //   )
+
+  //   textContainer.appendChild(paragraph)
+
+  infoBox.appendChild(textContainer)
+
+  const button = createElement(
+    'button',
+    'info__button',
+    INFO_LIST.button,
+  )
+
+  infoBox.appendChild(button)
+
+  return infoBox
 }
 
 const info = createInfo()

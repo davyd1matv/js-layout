@@ -28,19 +28,32 @@
 }
 
 .change {
-	display: flex
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .change__ch {
-
 	display: flex;
-	flex-direction: center;
-	justify-content: center;
+	flex-direction: column;
+
+	color: black;
+
+	gap: 10px;
 }
 
 .change__text {
-	color: dark;
+	display: flex;
+	justify-content: center;
+	// color: black;
 	font-size: 16px;
+}
+
+.change__under {
+	border-bottom: 3px solid;
+}
+
+.change--viewed {
+	color: gray
 }
 
 .info {
@@ -57,7 +70,7 @@
 
 .info__header {
 	font-size: 18px;
-	color: dark;
+	color: black;
 }
 
 .info__text {
