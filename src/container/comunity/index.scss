@@ -27,6 +27,22 @@
 	color: #121212;
 }
 
+.change {
+	display: flex
+}
+
+.change__ch {
+
+	display: flex;
+	flex-direction: center;
+	justify-content: center;
+}
+
+.change__text {
+	color: dark;
+	font-size: 16px;
+}
+
 .info {
 	display: flex;
 	flex-direction: column;
@@ -61,6 +77,8 @@
 	margin-right: 10px;
 	margin-top: 20px;
 }
+
+///
 
 .post__list {
 	display: flex;

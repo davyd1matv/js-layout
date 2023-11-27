@@ -1,6 +1,8 @@
 import {
   createElement,
   createHeader,
+  INFO_LIST,
+  //   createInfo,
 } from '../../script/layout'
 
 const page = document.querySelector('.page')
@@ -17,39 +19,51 @@ page.append(title)
 
 const CHANGE_LIST = [
   {
-    // category: [
-    //   { text: 'Важливо', id: 1 },
-    //   { text: 'Нова', id: 2 },
-    // ],
     info: 'База знань',
     viewed: false,
   },
 
   {
-    // category: [{ text: 'Нова', id: 2 }],
     info: 'Інформація',
     viewed: true,
   },
 ]
 
 const createChange = () => {
-  const changeTwo = createElement('change', 'change')
+  const changeTwo = createElement('div', 'change')
 
   CHANGE_LIST.forEach((ch) => {
-    const change = createElement()
+    const change = createElement(
+      'div',
+      ch.viewed
+        ? 'change__ch change--viewed'
+        : 'change__ch',
+    )
+
+    const text = createElement(
+      'div',
+      'change__text',
+      ch.info,
+    )
+
+    changeTwo.append(change, text)
   })
+  return changeTwo
 }
 
-const INFO_LIST = [
-  {
-    width: 340,
-    height: 160,
-    src: '/img/telegram.png',
-    title: 'Що таке база знань?',
-    text: `База знаний — база данных, содержащая правила вывода и информацию о человеческом опыте и знаниях в некоторой предметной области. В самообучающихся системах база знаний также содержит информацию, являющуюся результатом решения предыдущих задач.`,
-    button: `Перейти до ком'юніті у Телеграм`,
-  },
-]
+const change = createChange()
+page.append(change)
+
+// const INFO_LIST = [
+//   {
+//     width: 340,
+//     height: 160,
+//     src: '/img/telegram.png',
+//     title: 'Що таке база знань?',
+//     text: `База знаний — база данных, содержащая правила вывода и информацию о человеческом опыте и знаниях в некоторой предметной области. В самообучающихся системах база знаний также содержит информацию, являющуюся результатом решения предыдущих задач.`,
+//     button: `Перейти до ком'юніті у Телеграм`,
+//   },
+// ]
 
 const createInfo = () => {
   const boxInfo = createElement('div', 'info')

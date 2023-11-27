@@ -45,3 +45,48 @@ export const createHeader = () => {
 
   return header
 }
+
+export const INFO_LIST = [
+  {
+    width: 340,
+    height: 160,
+    src: '/img/telegram.png',
+    title: 'Що таке база знань?',
+    text: `База знаний — база данных, содержащая правила вывода и информацию о человеческом опыте и знаниях в некоторой предметной области. В самообучающихся системах база знаний также содержит информацию, являющуюся результатом решения предыдущих задач.`,
+    button: `Перейти до ком'юніті у Телеграм`,
+  },
+]
+
+// export const createInfo = () => {
+//   const boxInfo = createElement('div', 'info')
+
+//   INFO_LIST.forEach((infoData) => {
+//     const image = createElement(
+//       'img',
+//       'info__img',
+//       infoData.src,
+//     )
+
+//     const info = createElement(
+//       'h2',
+//       'info__header',
+//       infoData.title,
+//     )
+
+//     const text = createElement(
+//       'p',
+//       'info__text',
+//       infoData.text,
+//     )
+
+//     const button = createElement(
+//       'button',
+//       'info__button',
+//       infoData.button,
+//     )
+
+//     boxInfo.append(image, info, text, button)
+//   })
+
+//   return boxInfo
+// }
